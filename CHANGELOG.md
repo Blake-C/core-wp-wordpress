@@ -7,6 +7,11 @@ Image tags follow the pattern `php{PHP_VERSION}-{MAJOR}.{MINOR}.{PATCH}`.
 
 ## [Unreleased]
 
+## [php8.4-1.1.1] - 2026-06-11
+
+### Changed
+- Security rebuild on the updated `wordpress:php8.4-fpm-alpine` base (now Alpine 3.24, up from 3.23). `apk upgrade` clears 41 base-image CVEs flagged by Snyk — including a High in `libxml2` (Type Confusion) plus issues in `openssl`, `imagemagick`, `libcurl`, and `libpng`. No Dockerfile change.
+
 ## [php8.4-1.1.0] - 2026-06-11
 
 ### Changed
