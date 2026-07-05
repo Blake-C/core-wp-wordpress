@@ -50,3 +50,17 @@ jobs:
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
                   platforms: linux/amd64,linux/arm64
+
+            # Scan the actual built image (post apk-upgrade) and send a snapshot
+            # to Snyk. This reads the real layers, so it reflects what ships —
+            # unlike the GitHub Dockerfile project, which only sees the base
+            # image's pre-upgrade CVEs. monitor never fails the publish.
+            - name: Snyk monitor the published image
+              uses: snyk/actions/docker@master
+              continue-on-error: true
+              env:
+                  SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+              with:
+                  image: digitalblake/core-wp-wordpress:php8.4-latest
+                  args: --file=Dockerfile --project-name=core-wp-wordpress-image
+                  command: monitor
