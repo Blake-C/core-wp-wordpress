@@ -7,6 +7,12 @@ Image tags follow the pattern `php{PHP_VERSION}-{MAJOR}.{MINOR}.{PATCH}`.
 
 ## [Unreleased]
 
+## [php8.4-1.2.0] - 2026-07-05
+
+### Changed
+- Security rebuild on the `wordpress:php8.4-fpm-alpine` base (Alpine 3.24.1, PHP 8.4.23), re-applying `apk upgrade` to clear the latest base-image CVEs flagged by Snyk. WordPress remains at 7.0.
+- Updated XDebug 3.4.7 → 3.5.3.
+
 ## [php8.4-1.1.1] - 2026-06-11
 
 ### Changed
