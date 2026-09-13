@@ -11,6 +11,13 @@ Image tags follow the pattern `php{PHP_VERSION}-{MAJOR}.{MINOR}.{PATCH}`.
 
 ### Changed
 - Rebuilt on the `wordpress:php8.4-fpm-alpine` base, which now bundles WordPress 7.1 (up from 7.0) on PHP 8.4.25 and Alpine 3.24.1, with `apk upgrade` re-applied for the latest Alpine security patches. XDebug stays at 3.5.3, and the Dockerfile is unchanged.
+- Pinned every action in the publish workflow to a release commit SHA, since a tag or branch reference can be moved to different code after it is reviewed:
+  - `actions/checkout` v4 to v7.0.1
+  - `docker/setup-buildx-action` v3 to v4.3.0
+  - `docker/login-action` v3 to v4.6.0
+  - `docker/metadata-action` v5 to v6.2.0
+  - `docker/build-push-action` v6 to v7.3.0
+  - `snyk/actions/docker` from the `master` branch to v1.0.0
 
 ## [php8.4-1.2.0] - 2026-07-05
 
