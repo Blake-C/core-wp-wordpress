@@ -7,6 +7,12 @@ Image tags follow the pattern `php{PHP_VERSION}-{MAJOR}.{MINOR}.{PATCH}`.
 
 ## [Unreleased]
 
+## [php8.4-1.2.2] - 2026-10-14
+
+### Changed
+- Rebuilt on the `wordpress:php8.4-fpm-alpine` base, which now ships WordPress 7.1.3 on PHP 8.4.26 and Alpine 3.24.2, with `apk upgrade` re-applied for the latest Alpine security patches. XDebug stays at 3.5.3, and the Dockerfile is unchanged.
+- The `php8.4-1.2.1` tag was never pushed, so `php8.4-latest` stayed on the `php8.4-1.2.0` build while `latest` moved to the 1.2.1 commit. This release publishes `latest`, `php8.4-latest`, and `php8.4-1.2.2` from one commit, and the README release steps now push `main` and the tag in one command (`README.md`).
+
 ## [php8.4-1.2.1] - 2026-09-13
 
 ### Changed
